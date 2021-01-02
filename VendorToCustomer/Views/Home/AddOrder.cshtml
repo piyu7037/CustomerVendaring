@@ -1,0 +1,65 @@
+﻿@model VendorToCustomer.Models.Orders
+
+@{
+    ViewData["Title"] = "AddOrder";
+}
+<html>
+<body>
+    <h2>Add Order</h2>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="AddOrder">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="ItemId" class="control-label">Item Name</label>
+                    <select asp-for="ItemId" class="form-control" asp-items="ViewBag.ItemId"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustomerId" class="control-label">Customer Name</label>
+                    <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+                </div>
+                @*<div class="form-group">
+                        <label asp-for="DateOfPurchase" class="control-label">Date of Purchase</label>
+                        <input asp-for="DateOfPurchase" class="form-control" />
+                        <span asp-validation-for="DateOfPurchase" class="text-danger"></span>
+                    </div>*@
+                <div class="form-group">
+                    <label asp-for="Quantity" class="control-label"></label>
+                    <input asp-for="Quantity" class="form-control" />
+                    <span asp-validation-for="Quantity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PricePerUnit" class="control-label">Price per Unit</label>
+                    <input asp-for="PricePerUnit" class="form-control" />
+                    <span asp-validation-for="PricePerUnit" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Add " class="btn btn-success" />
+
+                    <a asp-action="Orders" class="btn btn-info">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+        </script>
+    }
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+
+</body>
+</html>

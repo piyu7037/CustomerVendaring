@@ -1,0 +1,53 @@
+﻿@model IEnumerable<VendorToCustomer.Models.Items>
+
+@{
+    ViewData["Title"] = "ItemList";
+}
+
+<h2>Items List</h2>
+
+<table class="table table-striped table-bordered table-hover" style="background-color:bisque">
+    <thead>
+        <tr>
+            <th>
+                Item Id
+            </th>
+            <th>
+                Item Name
+            </th>
+            <th>
+                Mesurement Unit
+            </th>
+            @* <th></th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MesurementUnti)
+                </td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>*@
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a asp-action="AddItem" class="btn btn-info">Add New Item</a>
+</p>
+@*@foreach (var item in Model)
+{
+
+    @Html.Partial("PartView", item)
+}*@

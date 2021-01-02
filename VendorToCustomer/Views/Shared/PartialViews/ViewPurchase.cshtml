@@ -1,0 +1,19 @@
+﻿@model Purchase
+
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="panel panel-primary">
+
+
+        <div class="panel-body">
+            <h3>Vendor Name : @Model.Vendors.VendorsName</h3>
+            <h5>Date : @Model.DateOfPurchase.ToShortDateString()</h5>
+            <h5>Quantity : @Model.Quantity</h5>
+            <h5>Price per Unit : @Model.Price</h5>
+            @{var Total = @Model.Price * @Model.Quantity;}
+            <h5>Total Cost : @Total</h5>
+        </div>
+    </div>
+</div>
+        @*<div class="panel-footer">
+            <a asp-area="" asp-controller="Items" asp-action="Index" class="btn btn-primary">Back To Page</a>
+        </div>*@

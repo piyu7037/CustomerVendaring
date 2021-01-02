@@ -1,0 +1,21 @@
+﻿@model IEnumerable<VendorToCustomer.Models.Purchase>
+
+@{
+    ViewData["Title"] = "Show";
+}
+
+<h2>Show Purchase details</h2>
+<div class="page-header">
+
+<div class="panel-body">
+
+@foreach (var item in Model)
+{
+    @Html.Partial("PartialViews/ViewPurchase", item);
+}
+</div>
+<div class="modal-footer">
+<a asp-area="" asp-controller="Items" asp-action="Index" class="btn btn-primary">Back To Page</a>
+</div>
+
+</div>

@@ -1,0 +1,11 @@
+﻿@model VendorToCustomer.Models.Search
+
+        <form asp-action="SearchResult" asp-controller="Home">
+          
+             @*   <label asp-for="CustomerId" class="control-label">Customer Name</label>*@
+                <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+           
+                <input type="submit" value="Search" class="btn btn-default" />
+           
+        </form>
+ 

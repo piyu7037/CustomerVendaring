@@ -1,0 +1,31 @@
+﻿@model VendorToCustomer.Models.Items
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Items</h4>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="ItemId" />
+                <div class="form-group">
+                    <label asp-for="ItemName" class="control-label">Item Name</label>
+                    <input asp-for="ItemName" class="form-control" />
+                    <span asp-validation-for="ItemName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MesurementUnti" class="control-label">Mesurement unit</label>
+                    <input asp-for="MesurementUnti" class="form-control" />
+                    <span asp-validation-for="MesurementUnti" class="text-danger"></span>
+                </div>
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                <a asp-action="Index" class="btn btn-info">Back to List</a>
+            </form>
+        </div>
+    </div>
+</div>

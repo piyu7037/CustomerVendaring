@@ -1,0 +1,12 @@
+﻿@model IEnumerable<VendorToCustomer.Models.Items>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Items List</h2>
+@foreach (var item in Model)
+{
+
+    @Html.Partial("PartView", item)
+}
